@@ -1,0 +1,19 @@
+{
+    "launch": {
+
+        "configurations": [],
+        "compounds": []
+    },
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact"
+    },
+    "emmet.extensionsPath": [
+        ""
+    ],
+    "emmet.preferences": {
+    
+    },
+    "emmet.showSuggestionsAsSnippets": true,
+    "javascript.autoClosingTags": false,
+    "javascript.validate.enable": false
+}
