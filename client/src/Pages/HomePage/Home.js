@@ -17,7 +17,6 @@ const Home = () => {
         window.location.href = '/';
         alert("Fill in all fields!");
         }
-
     }
 
     return (
