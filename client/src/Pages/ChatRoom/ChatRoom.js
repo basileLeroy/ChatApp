@@ -1,9 +1,8 @@
 import React from 'react'
-import { ChatEngineWrapper, Socket, ChatList } from 'react-chat-engine'
 
+import { ChatEngineWrapper, Socket, ChatFeed } from 'react-chat-engine'
 
-const Chats = () => {
-
+const ChatRooms = () => {
     return (
         <div>
             <ChatEngineWrapper>
@@ -13,11 +12,11 @@ const Chats = () => {
                     userSecret='password_123'
                 />
 
-                <ChatList />                        
+                <ChatFeed />                      
             </ChatEngineWrapper>
-            
+
         </div>
     )
 }
 
-export default Chats;
+export default ChatRooms;
