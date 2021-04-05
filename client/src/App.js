@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Route, Switch } from 'react-router-dom'
 
 import Home from './Pages/HomePage/Home'
 import Chats from './Pages/ChatList/Chats'
-import ChatRooms from './Pages/ChatRooms/ChatRooms'
+import ChatRooms from './Pages/ChatRoom/ChatRoom'
 
 
 const App = () => {
