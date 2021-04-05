@@ -11,7 +11,7 @@ const Chats = () => {
                 <Socket 
                     projectID='3f78a1ff-b807-4a82-b8e1-aeab29b74a34'
                     userName='Tetris'
-                    userSecret='password_123'
+                    userSecret='123123'
                 />
 
                 <ChatList />                        

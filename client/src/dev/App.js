@@ -15,17 +15,17 @@ const App = () => {
         <Route 
           path="/" 
           exact 
-          component={Home} 
+          component={Home}
         />
         <Route 
           path="/chatrooms" 
           exact 
-          component={Chats} 
+          component={Chats}
         />
         <Route 
           path="/room" 
           exact 
-          component={ChatRooms} 
+          component={ChatRooms}
         />
       </Switch>
   </div>
