@@ -9573,10 +9573,10 @@ react-app-polyfill@^2.0.0:
     regenerator-runtime "^0.13.7"
     whatwg-fetch "^3.4.1"
 
-react-chat-engine@^1.8.6:
-  version "1.8.6"
-  resolved "https://registry.yarnpkg.com/react-chat-engine/-/react-chat-engine-1.8.6.tgz#5fb7f31dce2616085ec141beb5267d805a1469cd"
-  integrity sha512-+NPXuPRFYiFLOnsm5i/ao2+BEwAQVsoZCxF2a6YhQrEr/p/MjBv2mSsP9Yf6ZjIg+IiqADo3TIK752QrsK9OZA==
+react-chat-engine@1.8.7:
+  version "1.8.7"
+  resolved "https://registry.yarnpkg.com/react-chat-engine/-/react-chat-engine-1.8.7.tgz#da42966945202a83fdf71967e2b92d9341332118"
+  integrity sha512-19IUHernelxIUrxd7W/tvUlhW9LXFhZB0aMuqwxMLE3hv884i1LeI6oxnSNRnyPWaTR5okngxbmQNh7IszaTIg==
   dependencies:
     "@ant-design/icons" "^4.2.2"
     axios "^0.21.1"
