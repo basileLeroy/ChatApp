@@ -13,7 +13,7 @@ const ChatRooms = () => {
                     userSecret='123123'
                 />
 
-                <ChatFeed />                      
+                <ChatFeed chatID={1} />                
             </ChatEngineWrapper>
 
         </div>
