@@ -9,6 +9,7 @@ import { Button, TextInput } from 'react-chat-engine'
 const NewChatForm = () => {
   const { conn } = useContext(ChatEngineContext)
   const [value, setValue] = useState('')
+  const [selected, setSelected] = useState(false)
   
   function handleChange(event) {
     setValue(event.target.value)
@@ -21,7 +22,7 @@ const NewChatForm = () => {
       newChat(
         conn, 
         { title: value },
-        () => {}
+        () => setSelected(false)
       )
     }
 
@@ -29,24 +30,46 @@ const NewChatForm = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit.bind(this)}>
-      <div style={{ height: '1px' }}>
-        <TextInput 
-          label='New Chat'
-          value={value}
-          style={{ width: 'calc(100% - 48px)' }}
-          handleChange={(e) => handleChange(e)}
-        />
-      </div>
+    <div style={styles.newChatContainer} className='ce-chat-form-container'>
+      
+        {
+          selected ?
+          <form onSubmit={handleSubmit.bind(this)}> 
+              <TextInput 
+                autoFocus
+                label='Chat Title'
+                value={value}
+                id='ce-new-chat-title-field'
+                onBlur={() => setSelected(false)}
+                style={{ width: '100%' }}
+                handleChange={(e) => handleChange(e)}
+              />
+          </form>:
+          <div>
+            <div style={{ height: '0px' }}>
+              <div style={{ fontWeight: '600', fontSize: '24px', position: 'relative', top: '4px', width:' calc(100% - 48px)' }}>
+                My Chats
+              </div>
+            </div>
 
-      <div style={{ width: '100%', textAlign: 'right' }}>
-        <Button 
-          icon='plus'
-          type="submit" 
-        />
-      </div>
-    </form>
+            <div style={{ width: '100%', textAlign: 'right' }}>
+              <Button 
+                icon='plus'
+                onClick={() => setSelected(true)}
+              />
+            </div>
+          </div>
+
+        }
+    </div>
   )
 }
 
 export default NewChatForm
+
+const styles = {
+  newChatContainer: { 
+    padding: '16px 14px',
+    backgroundColor: 'white'
+  }
+}

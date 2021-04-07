@@ -11,16 +11,14 @@ import { Button, TextAreaInput } from 'react-chat-engine'
 
 const NewMessageForm = () => {
   const { conn, activeChat, sendingMessages, setSendingMessages } = useContext(ChatEngineContext)
-
   const [state, setState] = useState({
     trigger: 0,
     mod: 3,
     value: '',
     attachments: []
-  });
-  
-  if (!conn || conn === null) return <div />
+  })
 
+  if (!conn || conn === null) return <div />
 
   function onRemove(index) {
     let { attachments } = state 
@@ -50,15 +48,14 @@ const NewMessageForm = () => {
     const data = { text, attachments, custom_json, sender_username, chat: activeChat }
 
     if (text.length > 0 || attachments.length > 0) {
-      sendMessage(
-        conn, 
-        activeChat, 
-        data,
-        (data) => {}
-      )
+      sendMessage(conn, activeChat, data, (data) => {})
     }
 
     setState({ ...state, value: '', attachments: [] })
+    
+    // TODO: Should be in Text Area Input
+    var textarea = document.getElementById("msg-textarea")
+    textarea.style.height = "24px"
 
     let newSendingMessages = {...sendingMessages}
     newSendingMessages[data.custom_json.sender_id] = data

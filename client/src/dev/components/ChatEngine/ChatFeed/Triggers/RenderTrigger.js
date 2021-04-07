@@ -1,14 +1,21 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef, useEffect, useContext } from 'react'
 
-const MessageLoader = props => {
+import { ChatEngineContext } from '../../../Context'
+
+const RenderTrigger = props => {
+    const { setLoadMoreMessages } = useContext(ChatEngineContext)
+
     function useOnScreen(ref) {
         const [isIntersecting, setIntersecting] = useState(false)
       
         const observer = new IntersectionObserver(
             ([entry]) => {
                 setIntersecting(entry.isIntersecting)
-                if (entry.isIntersecting) {
-                    props.onVisible()
+                
+                if (entry.isIntersecting) { 
+                    props.onEnter && props.onEnter()
+                } else {
+                    props.onLeave && props.onLeave()
                 }
             }
         )
@@ -28,4 +35,4 @@ const MessageLoader = props => {
     return <div ref={ref} />
 }
 
-export default MessageLoader
+export default RenderTrigger

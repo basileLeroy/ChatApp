@@ -2,13 +2,13 @@ import React from 'react'
 
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 const suffix = [
-  'st', 'nd', 'rd', 'th', 'th',
-  'th', 'th', 'th', 'th', 'th',
-  'th', 'th', 'th', 'th', 'th',
-  'th', 'th', 'th', 'th', 'th',
-  'st', 'nd', 'rd', 'th', 'th',
-  'th', 'th', 'th', 'th', 'th',
-  'st'
+    'st', 'nd', 'rd', 'th', 'th',
+    'th', 'th', 'th', 'th', 'th',
+    'th', 'th', 'th', 'th', 'th',
+    'th', 'th', 'th', 'th', 'th',
+    'st', 'nd', 'rd', 'th', 'th',
+    'th', 'th', 'th', 'th', 'th',
+    'st'
 ]
 
 const DatePartition = props => {

@@ -7,9 +7,6 @@ import _ from 'lodash'
 import { daySinceSent } from '../Utilities/dateToString'
 
 const ChatCard = props => {
-
-    console.log(props.renderChatCard);
-
     const { conn, activeChat, setActiveChat } = useContext(ChatEngineContext)
 
     if (!conn || conn === null) return <div/>
@@ -27,13 +24,7 @@ const ChatCard = props => {
     const { chat } = props
     const extraStyle = activeChat === chat.id ? styles.activeChat : {}
     const otherPerson = chat.people.find(person => person.person.username !== conn.userName);
-
-    console.log(props.renderChatCard);
-
-    if (props.renderChatCard) {
-        return <div key={`chat_${index}`}>{props.renderChatCard(chat, index)}</div>
-    }
-
+    
     let lastMessage = chat.last_message.text
     if (!lastMessage) {
         lastMessage = chat.last_message.attachments.length > 0 ?

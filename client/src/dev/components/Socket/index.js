@@ -2,21 +2,19 @@ import React, { useContext } from 'react'
 
 import { ChatEngineContext } from '../Context'
 
-import _ from 'lodash'
-
 import { readMessage } from '../../actions/messages'
 
 import { WebSocket } from 'nextjs-websocket'
 
 const Socket = props => {
     const {
-        setConnecting,
-        conn, setConn, setCreds,
-        chats, setChats,
-        messages, setMessages,
-        sendingMessages, setSendingMessages,
-        activeChat, setActiveChat,
-        typingCounter, setTypingCounter,
+      setConnecting,
+      conn, setConn, setCreds,
+      chats, setChats,
+      messages, setMessages,
+      sendingMessages, setSendingMessages,
+      activeChat, setActiveChat,
+      typingCounter, setTypingCounter,
     } = useContext(ChatEngineContext)
 
     function sortChats(chats) {
@@ -149,23 +147,11 @@ const Socket = props => {
         } else if (eventJSON.action === 'is_typing') {
             const { id, person } = eventJSON.data
             let newTypingCounter = {...typingCounter}
-
-            if (newTypingCounter[id] && newTypingCounter[id][person]) {
-                newTypingCounter = {
-                    ...newTypingCounter,
-                    [id]: {
+            newTypingCounter = {
+                ...newTypingCounter,
+                [id]: {
                     ...newTypingCounter[id],
-                    [person]: newTypingCounter[id][person] + 1
-                    }
-                }
-
-            } else {
-                newTypingCounter = {
-                    ...newTypingCounter,
-                    [id]: {
-                    ...newTypingCounter[id],
-                    [person]: 1
-                    }
+                    [person]: Date.now() + 2000
                 }
             }
                 
