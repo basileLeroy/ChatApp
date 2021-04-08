@@ -6,6 +6,8 @@ import { readMessage } from '../../actions/messages'
 
 import { WebSocket } from 'nextjs-websocket'
 
+import _ from 'lodash'
+
 const Socket = props => {
     const {
       setConnecting,

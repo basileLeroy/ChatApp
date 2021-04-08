@@ -7,6 +7,7 @@ import _ from 'lodash'
 import { daySinceSent } from '../Utilities/dateToString'
 
 const ChatCard = props => {
+    
     const { conn, activeChat, setActiveChat } = useContext(ChatEngineContext)
 
     if (!conn || conn === null) return <div/>
