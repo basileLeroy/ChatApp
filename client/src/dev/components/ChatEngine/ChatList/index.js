@@ -18,7 +18,9 @@ const ChatMap = props => {
     console.log(props)
     const didMountRef = useRef(false)
     const [hasMoreChats, setHasMoreChats] = useState(true)
+    console.log(useContext(ChatEngineContext));
     const { chats, setChats, activeChat, setActiveChat } = useContext(ChatEngineContext)
+
 
     function renderChats(chats) {
         return chats.map((chat, index) => {

@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useRef, useState } from 'react'
-import { ChatEngineContext } from '../../../components/Context'
+import { ChatEngineContext } from '../../Context'
 import { getLatestChats } from '../../../actions/chats/getLatestChats'
 
 import _ from 'lodash'
@@ -15,7 +15,7 @@ const List = (props) => {
     const didMountRef = useRef(false)
     const [hasMoreChats, setHasMoreChats] = useState(true)
     const { chats, setChats, activeChat, setActiveChat } = useContext(ChatEngineContext)
-    console.log(chats);
+    console.log(props);
 
     const prod = false // window.location.host.indexOf('chatengine.io') !== -1
 

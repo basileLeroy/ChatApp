@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom'
 
 import Home from './dev/Pages/Home'
-import Chats from './dev/Pages/ListOfRooms'
+import ChatRoom from './dev/Pages/ListOfRooms'
 import ChatRooms from './dev/Pages/SelectedChat'
 
 
@@ -20,7 +20,7 @@ const App = () => {
         <Route 
           path="/chatrooms" 
           exact 
-          component={Chats}
+          component={ChatRoom}
         />
         <Route 
           path="/room" 

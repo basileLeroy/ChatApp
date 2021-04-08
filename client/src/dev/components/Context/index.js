@@ -1,6 +1,6 @@
 import React, { useState, createContext } from 'react'
 
-export const ChatEngineContext = createContext()
+export const ChatEngineContext = React.createContext()
 
 export const ChatEngineWrapper = props => {
     const [connecting, setConnecting] = useState(true)
