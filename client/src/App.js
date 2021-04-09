@@ -18,7 +18,7 @@ const App = () => {
           component={Home}
         />
         <Route 
-          path="/chatrooms" 
+          path="/chats" 
           exact 
           component={ChatRoom}
         />

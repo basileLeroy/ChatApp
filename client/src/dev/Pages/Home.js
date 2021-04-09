@@ -10,7 +10,7 @@ const Home = () => {
         event.preventDefault();
 
         if ( user !== "" && password !== "") {
-        window.location.href = '/chats';
+        window.location.href = '/room';
         console.log("Hey " + user);
         return
         } else {
